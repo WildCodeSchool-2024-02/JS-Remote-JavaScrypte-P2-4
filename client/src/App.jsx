@@ -5,6 +5,7 @@ function App() {
     <main className="container">
       <header>
         <h1 className="logo">Harmonia</h1>
+        <h2> titre 2 </h2>
       </header>
 
       <nav className="navbar">
