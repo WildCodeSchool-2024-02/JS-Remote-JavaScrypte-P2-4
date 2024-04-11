@@ -1,5 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Imprima&display=swap");
+@font-face {
+  font-family: "IndieFlower-Regular";
+  src: url("./assets/fonts/IndieFlower-Regular.ttf");
+}
+@font-face {
+  font-family: "Imprima-Regular";
+  src: url("./assets/fonts/Imprima-Regular.ttf");
+}
 
 :root {
   --primary-color: ·#FF8C6F;
