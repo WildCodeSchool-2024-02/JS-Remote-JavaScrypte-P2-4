@@ -5,16 +5,17 @@ import "./App.css";
 
 
 function App() {
+  let id = [];
   const [imageURL, setImageURL] = useState([]);
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian")
     .then((response) => response.json())
     .then((data) => {
       const tempData = data.meals.slice(0, 4);
+      id = tempData.map((t) => t.idMeal);
       setImageURL(tempData.map((m) => m.strMealThumb))
     })
   }, []);
-  // console.info(imageURL)
 
   return (
     <>
@@ -25,8 +26,7 @@ function App() {
         <h2> Most Popular </h2>
             <div className="featuredImages">
               {imageURL && imageURL.map((i, index) => {
-                const id = index + 0.1
-                return <Featured key={id} imageURL={imageURL[index]} />
+                return <Featured key={id[index]} imageURL={imageURL[index]} />
               })}
             </div>
       </div>
