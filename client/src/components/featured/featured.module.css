@@ -1,0 +1,15 @@
+.imgFeatured {
+  width: 19rem;
+  border-radius: 1.25rem;
+  border: 0.15rem solid #ff8c6f;
+  box-shadow: 0.625rem 0.3125rem 0.3125rem 0.0625rem gray;
+}
+
+@media screen and (width >= 1200px) {
+  .imgFeatured {
+    width: 20rem;
+  }
+  .imgFeatured:hover {
+    width: 22rem;
+  }
+}
