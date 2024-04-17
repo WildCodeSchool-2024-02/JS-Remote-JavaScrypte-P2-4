@@ -16,8 +16,7 @@ export default function LandingPage() {
     <div className="container">
       <input type="text" placeholder="Enter your name" className="inputName" />
       <button type="button" className="mainButton">
-        {" "}
-        Start{" "}
+        Start
       </button>
       <h2> Most Popular </h2>
       <div className="featuredImages">
