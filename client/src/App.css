@@ -21,6 +21,12 @@
   padding: 0;
 }
 
+main {
+  * {
+    font-family: "Imprima-Regular";
+  }
+}
+
 #root {
   .container {
     padding: 1rem;

@@ -23,5 +23,57 @@ app
 
 const recipes = require("./recipes.json");
 
-// List de toutes les recettes
+// Recettes "populaires"
+app.get("/featured", (req, res) => {
+  const filterPopular = recipes.filter((r) => r.popular === true);
+  res.json(filterPopular);
+});
+
+// Route des catégories
+app.get("/category", (req, res) => {
+  const allCategory = recipes.filter((r) => r.category);
+  res.json(allCategory);
+});
+
+// Route des filtres
+app.get("/filter", (req, res) => {
+  const {
+    category = "",
+    ingredient = "",
+    vegetarian,
+    country = "",
+    allergy = "none",
+    limit = "",
+  } = req.query;
+
+  const filterByCategory =
+    category === "" ? recipes : recipes.filter((r) => r.category === category);
+  const filterByIngredient =
+    ingredient === ""
+      ? filterByCategory
+      : filterByCategory.filter((f) => f.ingredients.includes(ingredient));
+  const booleanString = vegetarian === "true"; // on "transforme" la chaîne de caractères en booléen
+  const isVegetarian =
+    vegetarian === undefined
+      ? filterByIngredient
+      : filterByIngredient.filter((f) => f.vegetarian === booleanString);
+  const filterByCountry =
+    country === ""
+      ? isVegetarian
+      : isVegetarian.filter((i) => i.country === country);
+  const allergies = allergy.split(",");
+  const filterByAllergy =
+    allergy === "none"
+      ? filterByCountry
+      : filterByCountry.filter((f) => !allergies.includes(f.allergies));
+  const limitResults =
+    limit === ""
+      ? filterByAllergy.slice(0, 10)
+      : filterByAllergy.slice(0, parseInt(limit, 10));
+
+  const filteredResult = limitResults;
+  res.json(filteredResult);
+});
+
+// Liste de toutes les recettes
 app.get("/recipes", (req, res) => res.json(recipes));
