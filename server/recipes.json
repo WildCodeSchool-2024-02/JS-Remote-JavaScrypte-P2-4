@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Boeuf Bourguignon",
+    "popular": true,
     "category": "Plat",
     "country": "France",
     "vegetarian": false,
@@ -12,6 +13,7 @@
   {
     "id": 2,
     "name": "Poulet au Curry",
+    "popular": false,
     "category": "Plat",
     "country": "Inde",
     "vegetarian": false,
@@ -32,6 +34,7 @@
   {
     "id": 3,
     "name": "Fajitas",
+    "popular": false,
     "category": "Plat",
     "country": "États-Unis (Texas)",
     "vegetarian": false,
@@ -52,6 +55,7 @@
   {
     "id": 4,
     "name": "Sushi",
+    "popular": false,
     "category": "Plat",
     "country": "Japon",
     "vegetarian": false,
@@ -69,6 +73,7 @@
   {
     "id": 5,
     "name": "Chili con Carne",
+    "popular": false,
     "category": "Plat",
     "country": "Mexique",
     "vegetarian": false,
@@ -87,6 +92,7 @@
   {
     "id": 6,
     "name": "Fish & Chips",
+    "popular": false,
     "category": "Plat",
     "country": "Royaume-Uni",
     "vegetarian": false,
@@ -104,6 +110,7 @@
   {
     "id": 7,
     "name": "Couscous",
+    "popular": true,
     "category": "Plat",
     "country": "Maroc",
     "vegetarian": false,
@@ -121,6 +128,7 @@
   {
     "id": 8,
     "name": "Ramen",
+    "popular": false,
     "category": "Plat",
     "country": "Japon",
     "vegetarian": false,
@@ -138,6 +146,7 @@
   {
     "id": 9,
     "name": "Paella",
+    "popular": false,
     "category": "Plat",
     "country": "Espagne",
     "vegetarian": false,
@@ -158,6 +167,7 @@
   {
     "id": 10,
     "name": "Pad Thai",
+    "popular": false,
     "category": "Plat",
     "country": "Thaïlande",
     "vegetarian": true,
@@ -176,6 +186,7 @@
   {
     "id": 11,
     "name": "Ratatouille",
+    "popular": false,
     "category": "Plat",
     "country": "France",
     "vegetarian": true,
@@ -195,6 +206,7 @@
   {
     "id": 12,
     "name": "Lasagnes",
+    "popular": true,
     "category": "Plat",
     "country": "Italie",
     "vegetarian": false,
@@ -214,6 +226,7 @@
   {
     "id": 13,
     "name": "Gratin de pommes de terre",
+    "popular": false,
     "category": "Plat",
     "country": "France",
     "vegetarian": true,
@@ -233,6 +246,7 @@
   {
     "id": 14,
     "name": "Nems",
+    "popular": false,
     "category": "Plat",
     "country": "Chine",
     "vegetarian": false,
@@ -256,6 +270,7 @@
   {
     "id": 15,
     "name": "Spaghettis à la bolognaise",
+    "popular": false,
     "category": "Plat",
     "country": "Italie",
     "vegetarian": false,
@@ -279,6 +294,7 @@
   {
     "id": 16,
     "name": "Pancakes",
+    "popular": false,
     "category": "Dessert",
     "country": "États-Unis",
     "vegetarian": true,
@@ -297,6 +313,7 @@
   {
     "id": 17,
     "name": "Tiramisù au café",
+    "popular": false,
     "category": "Dessert",
     "country": "Italie",
     "vegetarian": true,
@@ -315,6 +332,7 @@
   {
     "id": 18,
     "name": "Pudding",
+    "popular": false,
     "category": "Dessert",
     "country": "Angleterre",
     "vegetarian": true,
@@ -334,6 +352,7 @@
   {
     "id": 19,
     "name": "Pasteis de nata",
+    "popular": false,
     "category": "Dessert",
     "country": "Portugal",
     "vegetarian": true,
@@ -344,6 +363,7 @@
   {
     "id": 20,
     "name": "Crêpes",
+    "popular": true,
     "category": "Dessert",
     "country": "France",
     "vegetarian": true,
