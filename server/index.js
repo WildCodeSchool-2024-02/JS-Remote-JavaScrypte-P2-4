@@ -25,3 +25,15 @@ const recipes = require("./recipes.json");
 
 // List de toutes les recettes
 app.get("/recipes", (req, res) => res.json(recipes));
+
+app.get("/recipes/:id", (req, res) => {
+  const recipeId = parseInt(req.params.id, 10);
+
+  const recipeArray = recipes.find((r) => r.id === recipeId);
+
+  if (recipeArray != null) {
+    res.json(recipeArray);
+  } else {
+    res.sendStatus(404);
+  }
+});
