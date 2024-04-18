@@ -1,9 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import RecipeDetailsPage from "./pages/recipeDetails/RecipeDetailsPage"
-
-
+import RecipeDetailsPage from "./pages/recipeDetails/RecipeDetailsPage";
 
 import App from "./App";
 
@@ -12,10 +10,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path:"/recipe",
-        element: <RecipeDetailsPage />
-      },  
-    ]
+        path: "/recipe",
+        element: <RecipeDetailsPage />,
+      },
+    ],
   },
 ]);
 
