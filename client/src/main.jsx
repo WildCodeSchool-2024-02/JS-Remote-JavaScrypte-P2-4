@@ -1,11 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";import App from "./App";
 import FilterPage from "./pages/FilterPage";
 import LandingPage from "./pages/LandingPage";
+import RecipeDetailsPage from "./pages/recipeDetails/RecipeDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <FilterPage />,
+      },
+      {
+        path: "/recipe",
+        element: <RecipeDetailsPage />,
       },
     ],
   },
