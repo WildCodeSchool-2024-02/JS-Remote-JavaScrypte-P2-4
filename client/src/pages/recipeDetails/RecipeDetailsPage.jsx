@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function RecipeDetails() {
-  const [datas, setDatas] = useState(null);
+  const [recipe, setRecipe] = useState(null);
   const [loader, setLoader] = useState(false);
+  const { id } = useParams();
 
   useEffect(() => {
-    // fetch("http//localhost:3310/recipes/1").then((data) => setDatas(data) && setLoader(true)); 
-    const fetchDatas = async () => {
-      const response = await fetch("http://localhost:3310/recipes");
+    const fetchRecipe = async () => {
+      const response = await fetch(`http://localhost:3310/recipes/${id}`);
       const data = await response.json();
 
-      setDatas(data);
+      setRecipe(data);
       setLoader(true);
     };
-    fetchDatas();
-  }, []);
-  console.info(loader);
-  
+    fetchRecipe();
+  }, [id]);
+
   return (
     <div>
-      {loader ? datas.recipe : <h3>...</h3>}
-      {loader ? datas.map((d) => (
+      {loader ? recipe.recipe : <h3>...</h3>}
+      {loader ? (
         <>
-          <h1>{d.name}</h1>
+          <h1>{recipe.name}</h1>
           <figure>
-            <img src={d.image} alt={d.name}/>
-            <ficaption>{d.recipe}</ficaption>
+            <img src={recipe.image} alt={recipe.name} />
+            <p>{recipe.recipe}</p>
           </figure>
         </>
-      )) : null}
+      ) : (
+        <p>...</p>
+      )}
     </div>
   );
 }
