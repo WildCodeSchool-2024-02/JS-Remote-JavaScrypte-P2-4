@@ -1,14 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client";import App from "./App";
+import FilterPage from "./pages/FilterPage";
+import LandingPage from "./pages/LandingPage";
 import RecipeDetailsPage from "./pages/recipeDetails/RecipeDetailsPage";
-
-import App from "./App";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/search",
+        element: <FilterPage />,
+      },
       {
         path: "/recipe",
         element: <RecipeDetailsPage />,

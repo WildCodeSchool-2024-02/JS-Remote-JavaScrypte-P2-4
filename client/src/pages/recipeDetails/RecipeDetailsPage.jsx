@@ -4,17 +4,10 @@ export default function RecipeDetails() {
   const [datas, setDatas] = useState(null);
   const [loader, setLoader] = useState(false);
 
-  // useEffect (() => {
-  //     fetch ("http://localhost:3310/recipes/1")
-  //     .then((response) => response.json())
-  //     .then((data) => setDatas(data))
-  //     .catch(err => console.error(err));
-  // }, []);
-  // console.info(datas)
-
   useEffect(() => {
+    // fetch("http//localhost:3310/recipes/1").then((data) => setDatas(data) && setLoader(true)); 
     const fetchDatas = async () => {
-      const response = await fetch("http://localhost:3310/recipes/1");
+      const response = await fetch("http://localhost:3310/recipes");
       const data = await response.json();
 
       setDatas(data);
@@ -23,11 +16,19 @@ export default function RecipeDetails() {
     fetchDatas();
   }, []);
   console.info(loader);
-
+  
   return (
     <div>
-      <h1>La recette</h1>
-      {datas}
+      {loader ? datas.recipe : <h3>...</h3>}
+      {loader ? datas.map((d) => (
+        <>
+          <h1>{d.name}</h1>
+          <figure>
+            <img src={d.image} alt={d.name}/>
+            <ficaption>{d.recipe}</ficaption>
+          </figure>
+        </>
+      )) : null}
     </div>
   );
 }
