@@ -1,6 +1,11 @@
+import { useState } from "react";
 import style from "./filter.module.css";
 
 export default function Filter() {
+  const [isAllergicToArachids, setIsAllergicToArachids] = useState(false);
+  const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(false);
+  const [isAllergicToFish, setIsAllergicToFish] = useState(false);
+  const [isAllergicToLactose, setIsAllergicToLactose] = useState(false);
   const saveAllergy = (str, bool) => {
     localStorage.setItem(str, bool);
   };
@@ -12,6 +17,11 @@ export default function Filter() {
     localStorage.setItem("limit", form[1].value);
   };
 
+  const handleClick = (bool, setBool, str) => {
+    setBool(!bool);
+    saveAllergy(str, bool);
+  };
+
   return (
     <>
       <div className={style.allergies}>
@@ -20,28 +30,48 @@ export default function Filter() {
           <button
             className={style.buttonAllergies}
             type="button"
-            onClick={() => saveAllergy("arachides", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToArachids,
+                setIsAllergicToArachids,
+                "arachides"
+              )
+            }
           >
             Arachides
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("fruits-de-mer", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToSeafood,
+                setIsAllergicToSeafood,
+                "fruits-de-mer"
+              )
+            }
           >
             Crustacées
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("poisson", true)}
+            onClick={() =>
+              handleClick(isAllergicToFish, setIsAllergicToFish, "poisson")
+            }
           >
             Poisson
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("lactose", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToLactose,
+                setIsAllergicToLactose,
+                "lactose"
+              )
+            }
           >
             Lactose
           </button>
