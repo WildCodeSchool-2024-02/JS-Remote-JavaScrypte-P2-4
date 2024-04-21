@@ -25,6 +25,7 @@ export default function RecipeDetails() {
           <h1>{d.name}</h1>
           <figure>
             <img src={d.image} alt={d.name}/>
+            <ficaption>{d.ingredients}</ficaption>
             <ficaption>{d.recipe}</ficaption>
           </figure>
         </>
