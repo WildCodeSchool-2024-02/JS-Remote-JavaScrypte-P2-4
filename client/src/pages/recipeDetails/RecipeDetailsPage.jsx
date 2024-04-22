@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import style from "./recipeDetails.module.css";
 
 export default function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
@@ -18,15 +19,30 @@ export default function RecipeDetails() {
   }, [id]);
 
   return (
-    <div>
-      {loader ? recipe.recipe : <h3>...</h3>}
+    <div className={style.allRecipe}>
       {loader ? (
         <>
-          <h1>{recipe.name}</h1>
-          <figure>
-            <img src={recipe.image} alt={recipe.name} />
-            <p>{recipe.recipe}</p>
-          </figure>
+          <div className={style.titleRecipe}>
+            <h1>{recipe.name}</h1>
+          </div>
+          <div className={style.ingredientImage}>
+            <img
+              className={style.imageRecipe}
+              src={recipe.image}
+              alt={recipe.name}
+            />
+
+            <span className={style.titleIngredients}>
+              {" "}
+              Liste des ingrédients :{" "}
+            </span>
+            <p> {recipe.ingredients}</p>
+          </div>
+
+          <div className={style.recipeSide}>
+            <p className={style.recette}> Recette : </p>
+            <p className={style.recipe}>{recipe.recipe}</p>
+          </div>
         </>
       ) : (
         <p>...</p>
