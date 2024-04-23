@@ -1,15 +1,30 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./filter.module.css";
 
 export default function Filter() {
+  const [isAllergicToArachids, setIsAllergicToArachids] = useState(false);
+  const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(false);
+  const [isAllergicToFish, setIsAllergicToFish] = useState(false);
+  const [isAllergicToLactose, setIsAllergicToLactose] = useState(false);
   const saveAllergy = (str, bool) => {
     localStorage.setItem(str, bool);
   };
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     localStorage.setItem("vegetarian", form[0].value);
     localStorage.setItem("limit", form[1].value);
+
+    navigate("/search-results");
+  };
+
+  const handleClick = (bool, setBool, str) => {
+    setBool(!bool);
+    saveAllergy(str, bool);
   };
 
   return (
@@ -20,28 +35,48 @@ export default function Filter() {
           <button
             className={style.buttonAllergies}
             type="button"
-            onClick={() => saveAllergy("arachides", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToArachids,
+                setIsAllergicToArachids,
+                "arachides"
+              )
+            }
           >
             Arachides
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("fruits-de-mer", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToSeafood,
+                setIsAllergicToSeafood,
+                "fruits-de-mer"
+              )
+            }
           >
             Crustacées
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("poisson", true)}
+            onClick={() =>
+              handleClick(isAllergicToFish, setIsAllergicToFish, "poisson")
+            }
           >
             Poisson
           </button>
           <button
             type="button"
             className={style.buttonAllergies}
-            onClick={() => saveAllergy("lactose", true)}
+            onClick={() =>
+              handleClick(
+                isAllergicToLactose,
+                setIsAllergicToLactose,
+                "lactose"
+              )
+            }
           >
             Lactose
           </button>
@@ -53,7 +88,7 @@ export default function Filter() {
           <label>
             Êtes-vous végétarien ?
             <select name="vegetarian">
-              <option value="">Peu importe</option>
+              <option value="default">Peu importe</option>
               <option value="true">Oui</option>
               <option value="false">Non</option>
             </select>
@@ -63,7 +98,7 @@ export default function Filter() {
           <label>
             Combien de résultats souhaiteriez vous obtenir ?
             <select name="limit">
-              <option value="">Sélectionnez un nombre</option>
+              <option value="default">Sélectionnez un nombre</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
