@@ -28,13 +28,7 @@ app.get("/featured", (req, res) => {
   const filterPopular = recipes.filter((r) => r.popular === true);
   res.json(filterPopular);
 });
-/*
-// Route des catégories
-app.get("/category", (req, res) => {
-  const allCategory = recipes.filter((r) => r.category);
-  res.json(allCategory);
-});
- */
+
 // Route des filtres
 app.get("/filter", (req, res) => {
   const {
