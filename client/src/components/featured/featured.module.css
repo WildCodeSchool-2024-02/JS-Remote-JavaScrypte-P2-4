@@ -8,8 +8,10 @@
 @media screen and (width >= 1200px) {
   .imgFeatured {
     width: 20rem;
+    height: 26rem;
   }
   .imgFeatured:hover {
-    width: 22rem;
+    width: 20.2rem;
+    height: 26.4rem;
   }
 }
