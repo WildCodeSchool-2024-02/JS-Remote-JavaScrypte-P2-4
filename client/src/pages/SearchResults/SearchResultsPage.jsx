@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function SearchResultsPage() {
-  const URL = "http://localhost:3310/filter";
+  const URL = `${import.meta.env.VITE_API_URL}/filter`;
 
   const retrieveIsVegetarian = () => {
     const vegetarian = localStorage.getItem("vegetarian");
@@ -41,7 +41,6 @@ export default function SearchResultsPage() {
   };
 
   const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const isVegetarian = retrieveIsVegetarian();
@@ -55,11 +54,9 @@ export default function SearchResultsPage() {
       const data = await response.json();
 
       setResults(data);
-      setLoading(false);
     };
     fetchResults();
-  }, []);
-  if (!loading) console.info(typeof results); // TODO: remove this line before the merge
+  }, [URL]);
 
   return (
     <main>

@@ -9,7 +9,9 @@ export default function RecipeDetails() {
 
   useEffect(() => {
     const fetchRecipe = async () => {
-      const response = await fetch(`http://localhost:3310/recipes/${id}`);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/recipes/${id}`
+      );
       const data = await response.json();
 
       setRecipe(data);
