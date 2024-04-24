@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Featured from "../components/featured/Featured";
 
 export default function LandingPage() {
@@ -10,14 +11,19 @@ export default function LandingPage() {
         setFeatured(data);
       });
   }, []);
-  console.info(featured);
 
   return (
     <div className="container">
-      <input type="text" placeholder="Entrez votre prénom" className="inputName" />
-      <button type="button" className="mainButton">
-        Commencer
-      </button>
+      <input
+        type="text"
+        placeholder="Entrez votre prénom"
+        className="inputName"
+      />
+      <Link to="/search">
+        <button type="button" className="mainButton">
+          Commencer
+        </button>
+      </Link>
       <h2> Les plus populaires </h2>
       <div className="featuredImages">
         {featured &&
