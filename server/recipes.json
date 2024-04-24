@@ -26,15 +26,15 @@
     "country": "Inde",
     "vegetarian": false,
     "ingredients": [
-      " blancs de poulet,",
-      " crème fraîche,",
-      " oignons jaunes,",
-      " curry,",
-      " cumin,",
-      " sel,",
-      " poivre,",
-      " riz,",
-      " persil,"
+      " blancs de poulet",
+      " crème fraîche",
+      " oignons jaunes",
+      " curry",
+      " cumin",
+      " sel",
+      " poivre",
+      " riz",
+      " persil"
     ],
     "allergies": "lactose",
     "recipe": "Mettre une grande poêle à chauffer. Couper les oignons en petits morceaux, et les faire cuire à feu assez fort. Remuer, en ajoutant du curry et du cumin. Couper les blancs de poulet en morceaux, les ajouter dans la poêle et remettre des épices; tourner. Baisser le feu, et ajouter 2 cuillères à soupe de crème.\nAprès 5 min de cuisson, remettre 2 cuillères à soupe de crème et des épices (si nécessaire). Faites cuire le riz. Assemblez le tout, ajoutez le persil au dernier moment.Si le plat est fait à l'avance, remettre un peu de crème au moment de réchauffer car la sauce s'évapore.",
@@ -160,7 +160,7 @@
   },
   {
     "id": 9,
-    "name": "Paella",
+    "name": "Paëlla",
     "popular": false,
     "category": "Plat",
     "country": "Espagne",
@@ -182,7 +182,7 @@
   },
   {
     "id": 10,
-    "name": "Pad Thai",
+    "name": "Pad Thaï",
     "popular": false,
     "category": "Plat",
     "country": "Thaïlande",
