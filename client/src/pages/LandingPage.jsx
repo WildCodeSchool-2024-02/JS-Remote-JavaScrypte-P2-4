@@ -5,7 +5,7 @@ import Featured from "../components/featured/Featured";
 export default function LandingPage() {
   const [featured, setFeatured] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3310/featured")
+    fetch(`${import.meta.env.VITE_API_URL}/featured`)
       .then((response) => response.json())
       .then((data) => {
         setFeatured(data);

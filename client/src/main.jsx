@@ -6,6 +6,7 @@ import FilterPage from "./pages/FilterPage";
 import LandingPage from "./pages/LandingPage";
 import RecipeDetailsPage from "./pages/recipeDetails/RecipeDetailsPage";
 import SearchResultsPage from "./pages/SearchResults/SearchResultsPage";
+import CatalogPage from "./pages/catalog/CatalogPage";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,12 @@ const router = createBrowserRouter([
         path: "/recipe/:id",
         element: <RecipeDetailsPage />,
       },
+      {
+        path: "/recipe-list",
+        element: <CatalogPage />,
+      },
     ],
   },
-
-  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

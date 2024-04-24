@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import style from "./searchResults.module.css";
 
 export default function SearchResultsPage() {
-  const URL = "http://localhost:3310/filter";
+  const URL = `${import.meta.env.VITE_API_URL}/filter`;
 
   const retrieveIsVegetarian = () => {
     const vegetarian = localStorage.getItem("vegetarian");
@@ -43,7 +43,6 @@ export default function SearchResultsPage() {
 
   const [results, setResults] = useState([]);
 
-
   useEffect(() => {
     const isVegetarian = retrieveIsVegetarian();
     const allergy = retrieveAllergies();
@@ -56,33 +55,40 @@ export default function SearchResultsPage() {
       const data = await response.json();
 
       setResults(data);
- 
     };
     fetchResults();
   }, []);
 
-
   return (
     <main>
-     <NavLink className={style.buttonBackSearch} to="/search"> Retour</NavLink>
-      <p className={style.text}> Voici une selection de plat qui vous correspondent  </p>
-      <div className={style.all}> 
-      {results.length > 0 ? (
-        results.map((r) => (
-          <div className={style.allResults} key={r.id}>
-            <NavLink to={`/recipe/${r.id}`}>
-              <figure className={style.oneResult}>
-                <img className={style.image} src={r.image} alt={r.name} />
-                <figcaption className={style.title}>{r.name}</figcaption>
-                <button type="button" className={style.buttonRecipe} > Recette </button>
-              </figure>
-            </NavLink>
-          </div>
-      
-        ))
-      ) : (
-        <p>Pas de résultats...</p>
-      )}    </div>
+      <NavLink className={style.buttonBackSearch} to="/search">
+        {" "}
+        Retour
+      </NavLink>
+      <p className={style.text}>
+        {" "}
+        Voici une selection de plat qui vous correspondent{" "}
+      </p>
+      <div className={style.all}>
+        {results.length > 0 ? (
+          results.map((r) => (
+            <div className={style.allResults} key={r.id}>
+              <NavLink to={`/recipe/${r.id}`}>
+                <figure className={style.oneResult}>
+                  <img className={style.image} src={r.image} alt={r.name} />
+                  <figcaption className={style.title}>{r.name}</figcaption>
+                  <button type="button" className={style.buttonRecipe}>
+                    {" "}
+                    Recette{" "}
+                  </button>
+                </figure>
+              </NavLink>
+            </div>
+          ))
+        ) : (
+          <p>Pas de résultats...</p>
+        )}{" "}
+      </div>
     </main>
   );
 }
