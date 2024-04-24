@@ -15,7 +15,7 @@ export default function CatalogPage() {
 
   return (
     <>
-      <h2 className={style.title}>Catalogue </h2>
+      <h2 className={style.title}>Catalogue des recettes</h2>
       <div className={style.container}>
         {recipes &&
           recipes.map((r) => (
