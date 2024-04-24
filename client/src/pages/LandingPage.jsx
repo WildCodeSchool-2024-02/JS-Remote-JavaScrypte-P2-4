@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Featured from "../components/featured/Featured";
 
 export default function LandingPage() {
@@ -10,12 +11,21 @@ export default function LandingPage() {
         setFeatured(data);
       });
   }, []);
-  console.info(featured);
+
+  const navigate = useNavigate();
 
   return (
     <div className="container">
-      <input type="text" placeholder="Entrez votre prénom" className="inputName" />
-      <button type="button" className="mainButton">
+      <input
+        type="text"
+        placeholder="Entrez votre prénom"
+        className="inputName"
+      />
+      <button
+        type="button"
+        className="mainButton"
+        onClick={() => navigate("/search")}
+      >
         Commencer
       </button>
       <h2> Les plus populaires </h2>
