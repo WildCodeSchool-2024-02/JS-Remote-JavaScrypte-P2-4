@@ -1,16 +1,19 @@
 .navbar {
-  padding: 4px 1.5rem;
+  padding: 0.25rem 2rem;
   background-color: #ff8c6f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  a {
+    margin: 0;
+  }
   .title {
     font-family: "Indie Flower", cursive;
     color: #fff;
     font-weight: 400;
     font-style: normal;
     font-size: 2.2rem;
+    margin: 0;
   }
 
   .logo {
@@ -35,6 +38,7 @@
 
 @media screen and (width >= 1200px) {
   .navbar {
+    padding: 0.25rem 3rem;
     .logo {
       height: 6rem;
     }
@@ -42,6 +46,8 @@
       font-size: 2.8rem;
     }
     ul {
+      margin: 0;
+      gap: 1.5rem;
       li {
         button {
           img {
