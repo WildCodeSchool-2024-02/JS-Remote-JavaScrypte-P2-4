@@ -1,0 +1,78 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.buttonBackSearch {
+  background-color: rgb(182, 182, 182);
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+  float: left;
+}
+.text {
+  padding-top: 2rem;
+}
+.oneResult {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff8c6f;
+  width: 18rem;
+  height: 17rem;
+  margin-top: 3rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+
+  .image {
+    position: relative;
+    bottom: 12%;
+    object-fit: cover;
+    width: 80%;
+    height: 90%;
+    border-radius: 30px;
+  }
+  .title {
+    position: relative;
+    bottom: 6%;
+  }
+  .buttonRecipe {
+    background-color: black;
+    color: white;
+    padding: 0.2rem;
+    margin-bottom: 1.3rem;
+    width: 5rem;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+  }
+}
+@media screen and (width >= 1200px) {
+  .all {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .oneResult {
+    width: 30vw;
+    height: 25vw;
+    margin-top: 4rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .buttonRecipe {
+    font-size: 1.2rem;
+  }
+}

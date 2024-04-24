@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import style from "./searchResults.module.css";
 
 export default function SearchResultsPage() {
   const URL = `${import.meta.env.VITE_API_URL}/filter`;
@@ -56,24 +57,38 @@ export default function SearchResultsPage() {
       setResults(data);
     };
     fetchResults();
-  }, [URL]);
+  }, []);
 
   return (
     <main>
-      {results.length > 0 ? (
-        results.map((r) => (
-          <div key={r.id}>
-            <Link to={`/recipe/${r.id}`}>
-              <figure>
-                <img src={r.image} alt={r.name} />
-                <figcaption>{r.name}</figcaption>
-              </figure>
-            </Link>
-          </div>
-        ))
-      ) : (
-        <p>Pas de résultats...</p>
-      )}
+      <NavLink className={style.buttonBackSearch} to="/search">
+        {" "}
+        Retour
+      </NavLink>
+      <p className={style.text}>
+        {" "}
+        Voici une selection de plat qui vous correspondent{" "}
+      </p>
+      <div className={style.all}>
+        {results.length > 0 ? (
+          results.map((r) => (
+            <div className={style.allResults} key={r.id}>
+              <NavLink to={`/recipe/${r.id}`}>
+                <figure className={style.oneResult}>
+                  <img className={style.image} src={r.image} alt={r.name} />
+                  <figcaption className={style.title}>{r.name}</figcaption>
+                  <button type="button" className={style.buttonRecipe}>
+                    {" "}
+                    Recette{" "}
+                  </button>
+                </figure>
+              </NavLink>
+            </div>
+          ))
+        ) : (
+          <p>Pas de résultats...</p>
+        )}{" "}
+      </div>
     </main>
   );
 }
