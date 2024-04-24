@@ -19,44 +19,46 @@ export default function RecipeDetails() {
   }, [id]);
 
   return (
-    <div className={style.allRecipe}>
-      {loader ? (
-        <>
-          <div>
-            {" "}
-            <NavLink className={style.buttonBack} to="/search-results">
-              {" "}
-              Retour{" "}
-            </NavLink>
-          </div>
-          <div className={style.titleRecipe}>
-            <h1>{recipe.name}</h1>
-          </div>
-          <div className={style.ingredientImage}>
-            <img
-              className={style.imageRecipe}
-              src={recipe.image}
-              alt={recipe.name}
-            />
-
-            <span className={style.titleIngredients}>
-              {" "}
-              Liste des ingrédients :{" "}
-            </span>
-            <div className={style.ingredients}>
-              {" "}
-              {recipe.ingredients.join(", ")}
+    <main>
+      <div className={style.allRecipe}>
+        {loader ? (
+          <>
+            <div className={style.titleRecipe}>
+              <h1>{recipe.name}</h1>
             </div>
-          </div>
+            <div className={style.ingredientImage}>
+              <img
+                className={style.imageRecipe}
+                src={recipe.image}
+                alt={recipe.name}
+              />
 
-          <div className={style.recipeSide}>
-            <p className={style.recette}> Recette : </p>
-            <p className={style.recipe}>{recipe.recipe}</p>
-          </div>
-        </>
-      ) : (
-        <p>...</p>
-      )}
-    </div>
+              <span className={style.titleIngredients}>
+                {" "}
+                Liste des ingrédients :{" "}
+              </span>
+              <div className={style.ingredients}>
+                {" "}
+                {recipe.ingredients.join(", ")}
+              </div>
+            </div>
+
+            <div className={style.recipeSide}>
+              <p className={style.recette}> Recette : </p>
+              <p className={style.recipe}>{recipe.recipe}</p>
+            </div>
+            <div>
+              {" "}
+              <NavLink className={style.buttonBack} to="/search-results">
+                {" "}
+                Retour{" "}
+              </NavLink>
+            </div>
+          </>
+        ) : (
+          <p>...</p>
+        )}
+      </div>
+    </main>
   );
 }

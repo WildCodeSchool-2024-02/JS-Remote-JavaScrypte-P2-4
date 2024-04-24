@@ -5,16 +5,18 @@
     display: block;
     display: inline-block;
     height: 100%;
+    margin-bottom: 3rem;
   }
 }
 
 .buttonBack {
-  color: white;
+  background-color: rgb(182, 182, 182);
   text-decoration: none;
-  background-color: #5a5a5a;
-  border-radius: 20px;
-  padding: 0.75rem;
-  width: 6rem;
+  color: black;
+  border-radius: 15px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .imageRecipe {
@@ -86,9 +88,10 @@
           border-radius: 50px;
         }
       }
+
       .recipeSide {
         padding-top: 3rem;
-        padding-bottom: 7rem;
+        padding-bottom: 5rem;
         padding-right: 1rem;
       }
       .recipe {
@@ -102,6 +105,12 @@
         position: absolute;
         top: 10%;
       }
+      .ingredients {
+        padding-bottom: 2rem;
+      }
     }
+  }
+  .buttonBack {
+    margin-right: 1rem;
   }
 }
