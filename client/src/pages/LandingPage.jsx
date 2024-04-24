@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Featured from "../components/featured/Featured";
 
 export default function LandingPage() {
@@ -12,8 +12,6 @@ export default function LandingPage() {
       });
   }, []);
 
-  const navigate = useNavigate();
-
   return (
     <div className="container">
       <input
@@ -21,13 +19,11 @@ export default function LandingPage() {
         placeholder="Entrez votre prénom"
         className="inputName"
       />
-      <button
-        type="button"
-        className="mainButton"
-        onClick={() => navigate("/search")}
-      >
-        Commencer
-      </button>
+      <Link to="/search">
+        <button type="button" className="mainButton">
+          Commencer
+        </button>
+      </Link>
       <h2> Les plus populaires </h2>
       <div className="featuredImages">
         {featured &&
