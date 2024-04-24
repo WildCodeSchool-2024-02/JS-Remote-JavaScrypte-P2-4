@@ -8,6 +8,15 @@
   }
 }
 
+.buttonBack {
+  color: white;
+  text-decoration: none;
+  background-color: #5a5a5a;
+  border-radius: 20px;
+  padding: 0.75rem;
+  width: 6rem;
+}
+
 .imageRecipe {
   width: 60vw;
   padding-top: 1rem;
@@ -29,7 +38,7 @@
 }
 .allRecipe {
   background-color: #ff8c6f;
-  margin-top: 2rem;
+  margin-top: 4rem;
   width: 80%;
 }
 
@@ -37,18 +46,25 @@
   font-size: 1.3rem;
   padding-bottom: 0.3rem;
 }
-
+.recipeSide {
+  padding-top: 2rem;
+}
 .recette {
   padding-bottom: 0.1rem;
   font-size: 2rem;
-  color: #fff2e7;
+  color: black;
 }
 .recipe {
   padding-top: 0.2rem;
   max-width: 35ch;
   margin: 0 auto;
   line-height: 1.4rem;
-  color: #fff2e7;
+  color: black;
+}
+
+.ingredients {
+  max-width: 60ch;
+  line-height: 1.4rem;
 }
 
 @media screen and (width >= 1200px) {
@@ -67,10 +83,11 @@
           width: 30rem;
           justify-content: left;
           padding: 2rem;
+          border-radius: 50px;
         }
       }
       .recipeSide {
-        padding-top: 5rem;
+        padding-top: 3rem;
         padding-bottom: 7rem;
         padding-right: 1rem;
       }
@@ -81,7 +98,7 @@
         background-color: transparent;
         display: block;
         display: inline;
-        padding-left: 30vw;
+        padding-left: 35vw;
         position: absolute;
         top: 10%;
       }

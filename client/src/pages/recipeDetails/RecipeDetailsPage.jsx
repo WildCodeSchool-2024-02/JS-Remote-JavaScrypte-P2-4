@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import style from "./recipeDetails.module.css";
 
 export default function RecipeDetails() {
@@ -22,6 +22,13 @@ export default function RecipeDetails() {
     <div className={style.allRecipe}>
       {loader ? (
         <>
+          <div>
+            {" "}
+            <NavLink className={style.buttonBack} to="/search-results">
+              {" "}
+              Retour{" "}
+            </NavLink>
+          </div>
           <div className={style.titleRecipe}>
             <h1>{recipe.name}</h1>
           </div>
@@ -36,7 +43,10 @@ export default function RecipeDetails() {
               {" "}
               Liste des ingrédients :{" "}
             </span>
-            <p> {recipe.ingredients}</p>
+            <div className={style.ingredients}>
+              {" "}
+              {recipe.ingredients.join(", ")}
+            </div>
           </div>
 
           <div className={style.recipeSide}>
