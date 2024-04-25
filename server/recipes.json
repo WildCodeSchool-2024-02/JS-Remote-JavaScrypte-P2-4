@@ -186,7 +186,7 @@
     "popular": false,
     "category": "Plat",
     "country": "Thaïlande",
-    "vegetarian": true,
+    "vegetarian": false,
     "ingredients": [
       "riz sauté",
       "tofu",

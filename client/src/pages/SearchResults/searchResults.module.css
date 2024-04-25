@@ -10,13 +10,17 @@
 .buttonBackSearch {
   background-color: rgb(182, 182, 182);
   text-decoration: none;
-  color: black;
+  color: white;
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
   margin-left: 0.7rem;
   float: left;
 }
+.buttonBackSearch:hover {
+  background-color: black;
+}
+
 .text {
   padding-top: 2rem;
 }

@@ -14,17 +14,13 @@ export default function LandingPage() {
 
   return (
     <div className="container">
-      <input
-        type="text"
-        placeholder="Entrez votre prénom"
-        className="inputName"
-      />
+      <p className="title">Une selection de repas selon vos goûts </p>
       <Link to="/search">
         <button type="button" className="mainButton">
           Commencer
         </button>
       </Link>
-      <h2> Les plus populaires </h2>
+      <h2> Les recettes du moment </h2>
       <div className="featuredImages">
         {featured &&
           featured.map((f) => <Featured key={f.id} imageURL={f.image} />)}
