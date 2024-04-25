@@ -19,7 +19,11 @@ export default function CatalogPage() {
       <div className={style.container}>
         {recipes &&
           recipes.map((r) => (
-            <Link className={style.links} to={`/recipe/${r.id}`} key={r.id}>
+            <Link
+              className={style.links}
+              to={`/recipe/${r.id}?returnURL=recipe-list`}
+              key={r.id}
+            >
               <figure className={style.card}>
                 <img className={style.imageFood} src={r.image} alt={r.name} />
                 <figcaption className={style.mealName}>{r.name}</figcaption>
