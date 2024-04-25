@@ -57,7 +57,7 @@ export default function SearchResultsPage() {
       setResults(data);
     };
     fetchResults();
-  }, []);
+  }, [URL]);
 
   return (
     <main>
