@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useSearchParams } from "react-router-dom";
 import style from "./recipeDetails.module.css";
 
 export default function RecipeDetails() {
@@ -20,6 +20,9 @@ export default function RecipeDetails() {
     fetchRecipe();
   }, [id]);
 
+  const [searchParams] = useSearchParams();
+  const returnURL = searchParams.get("returnURL");
+
   return (
     <main>
       <div className={style.allRecipe}>
@@ -36,11 +39,9 @@ export default function RecipeDetails() {
               />
 
               <span className={style.titleIngredients}>
-                {" "}
-                Liste des ingrédients :{" "}
+                Liste des ingrédients :
               </span>
               <div className={style.ingredients}>
-                {" "}
                 {recipe.ingredients.join(", ")}
               </div>
             </div>
@@ -50,10 +51,8 @@ export default function RecipeDetails() {
               <p className={style.recipe}>{recipe.recipe}</p>
             </div>
             <div>
-              {" "}
-              <NavLink className={style.buttonBack} to="/search-results">
-                {" "}
-                Retour{" "}
+              <NavLink className={style.buttonBack} to={`/${returnURL}`}>
+                Retour
               </NavLink>
             </div>
           </>

@@ -57,7 +57,7 @@ export default function SearchResultsPage() {
       setResults(data);
     };
     fetchResults();
-  }, []);
+  }, [URL]);
 
   return (
     <main>
@@ -73,7 +73,7 @@ export default function SearchResultsPage() {
         {results.length > 0 ? (
           results.map((r) => (
             <div className={style.allResults} key={r.id}>
-              <NavLink to={`/recipe/${r.id}`}>
+              <NavLink to={`/recipe/${r.id}?returnURL=search-results`}>
                 <figure className={style.oneResult}>
                   <img className={style.image} src={r.image} alt={r.name} />
                   <figcaption className={style.title}>{r.name}</figcaption>
