@@ -12,11 +12,14 @@
 .buttonBack {
   background-color: rgb(182, 182, 182);
   text-decoration: none;
-  color: black;
+  color: white;
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
   margin-left: 1rem;
+}
+.buttonBack:hover {
+  background-color: black;
 }
 
 .imageRecipe {
@@ -101,7 +104,7 @@
         background-color: transparent;
         display: block;
         display: inline;
-        padding-left: 35vw;
+        padding-left: 33vw;
         position: absolute;
         top: 10%;
       }

@@ -47,6 +47,9 @@ p {
     transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
   }
+  .buttonAllergies:hover {
+    background-color: #fe5f38;
+  }
 }
 
 .vegetarian {
@@ -116,10 +119,12 @@ form {
     border-bottom: 2px solid #7b7b7b;
     border-radius: 15px;
   }
-
   button:active {
     transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
+  }
+  button:hover {
+    background-color: black;
   }
 }
 
