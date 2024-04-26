@@ -36,6 +36,7 @@
         border: none;
         figcaption {
           font-size: 0.75rem;
+          font-family: "Imprima-Regular";
         }
         img {
           max-height: 2.5rem;
