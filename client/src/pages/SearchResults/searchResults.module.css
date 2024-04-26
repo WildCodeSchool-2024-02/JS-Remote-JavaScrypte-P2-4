@@ -3,14 +3,14 @@
   flex-direction: column;
   a {
     text-decoration: none;
-    color: black;
+    color: var(--black);
   }
 }
 
 .buttonBackSearch {
-  background-color: rgb(182, 182, 182);
+  background-color: var(--grey);
   text-decoration: none;
-  color: white;
+  color: var(--white);
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
@@ -18,7 +18,7 @@
   float: left;
 }
 .buttonBackSearch:hover {
-  background-color: black;
+  background-color: var(--black);
 }
 
 .text {
@@ -27,7 +27,7 @@
 .oneResult {
   display: flex;
   flex-direction: column;
-  background-color: #ff8c6f;
+  background-color: var(--primary-color);
   width: 18rem;
   height: 17rem;
   margin-top: 3rem;
@@ -47,12 +47,11 @@
     bottom: 6%;
   }
   .buttonRecipe {
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     padding: 0.2rem;
     margin-bottom: 1.3rem;
     width: 5rem;
-    color: #fff;
     border: none;
     border-radius: 15px;
   }

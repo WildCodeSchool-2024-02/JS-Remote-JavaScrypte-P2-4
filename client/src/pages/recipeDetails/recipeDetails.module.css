@@ -10,16 +10,16 @@
 }
 
 .buttonBack {
-  background-color: rgb(182, 182, 182);
+  background-color: var(--grey);
   text-decoration: none;
-  color: white;
+  color: var(--white);
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
   margin-left: 1rem;
 }
 .buttonBack:hover {
-  background-color: black;
+  background-color: var(--black);
 }
 
 .imageRecipe {
@@ -39,10 +39,10 @@
   padding-bottom: 1rem;
   padding-top: 1rem;
   margin-top: 2.2rem;
-  background-color: #fff2e7;
+  background-color: var(--white);
 }
 .allRecipe {
-  background-color: #ff8c6f;
+  background-color: var(--primary-color);
   margin-top: 4rem;
   width: 80%;
 }
@@ -57,14 +57,14 @@
 .recette {
   padding-bottom: 0.1rem;
   font-size: 2rem;
-  color: black;
+  color: var(--black);
 }
 .recipe {
   padding-top: 0.2rem;
   max-width: 35ch;
   margin: 0 auto;
   line-height: 1.4rem;
-  color: black;
+  color: var(--black);
 }
 
 .ingredients {

@@ -6,7 +6,7 @@
 }
 
 .card {
-  background-color: #ff8c6f;
+  background-color: var(--primary-color);
   width: 16rem;
   height: 18rem;
   display: flex;
@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-in-out;
 }
 
 .imageFood {
@@ -26,7 +26,7 @@
 
 .links {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 .title {
@@ -40,7 +40,7 @@
     flex-wrap: wrap;
   }
   .card:hover {
-    border-color: black;
+    border-color: var(--black);
     box-shadow: 0 10px 26px 0 rgba(0, 0, 0, 0.5);
   }
 }
