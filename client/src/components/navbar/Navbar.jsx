@@ -14,16 +14,18 @@ function Navbar() {
       <ul>
         <li>
           <Link to="/search">
-            <button type="button">
+            <figure>
               <img className={style.logolist} src={logoList} alt="list" />
-            </button>
+              <figcaption>Filtres</figcaption>
+            </figure>
           </Link>
         </li>
         <li>
           <Link to="/recipe-list">
-            <button type="button">
+            <figure>
               <img className={style.logomeal} src={logoMeal} alt="meals" />
-            </button>
+              <figcaption>Recettes</figcaption>
+            </figure>
           </Link>
         </li>
       </ul>
