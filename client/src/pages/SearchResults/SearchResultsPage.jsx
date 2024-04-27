@@ -62,12 +62,10 @@ export default function SearchResultsPage() {
   return (
     <main>
       <NavLink className={style.buttonBackSearch} to="/search">
-        {" "}
         Retour
       </NavLink>
       <p className={style.text}>
-        {" "}
-        Voici une selection de plat qui vous correspondent{" "}
+        Voici une selection de plat qui vous correspondent
       </p>
       <div className={style.all}>
         {results.length > 0 ? (
@@ -77,10 +75,7 @@ export default function SearchResultsPage() {
                 <figure className={style.oneResult}>
                   <img className={style.image} src={r.image} alt={r.name} />
                   <figcaption className={style.title}>{r.name}</figcaption>
-                  <button type="button" className={style.buttonRecipe}>
-                    {" "}
-                    Recette{" "}
-                  </button>
+                  <span className={style.buttonRecipe}>Recette</span>
                 </figure>
               </NavLink>
             </div>
