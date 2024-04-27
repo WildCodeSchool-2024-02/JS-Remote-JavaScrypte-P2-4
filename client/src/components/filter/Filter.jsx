@@ -3,23 +3,11 @@ import { useNavigate } from "react-router-dom";
 import style from "./filter.module.css";
 
 export default function Filter() {
-  const initialState = (str) => {
-    const storedValue = localStorage.getItem(str);
-    if (storedValue !== null) return storedValue;
-    return false;
-  };
-  const [isAllergicToArachids, setIsAllergicToArachids] = useState(
-    initialState("arachides")
-  );
-  const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(
-    initialState("fruits-de-mer")
-  );
-  const [isAllergicToFish, setIsAllergicToFish] = useState(
-    initialState("poisson")
-  );
-  const [isAllergicToLactose, setIsAllergicToLactose] = useState(
-    initialState("lactose")
-  );
+  const [isAllergicToArachids, setIsAllergicToArachids] = useState(false);
+  const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(false);
+  const [isAllergicToFish, setIsAllergicToFish] = useState(false);
+  const [isAllergicToLactose, setIsAllergicToLactose] = useState(false);
+
   const saveAllergy = (str, bool) => {
     localStorage.setItem(str, bool);
   };
