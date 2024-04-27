@@ -40,7 +40,7 @@ p {
     color: var(--white);
     background: var(--primary-color);
     border: none;
-    border-bottom: 2px solid #fe5f38;
+    border-bottom: 2px solid var(--red);
     border-radius: 15px;
   }
   .buttonAllergies:active {
@@ -48,7 +48,11 @@ p {
     -webkit-transform: translate(0px, 2px);
   }
   .buttonAllergies:hover {
-    background-color: #fe5f38;
+    background-color: var(--red);
+  }
+  .buttonPressed {
+    background-color: var(--blue);
+    color: var(--black);
   }
 }
 
