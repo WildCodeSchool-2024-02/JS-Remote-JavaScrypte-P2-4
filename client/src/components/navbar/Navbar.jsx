@@ -1,28 +1,32 @@
+import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
+import logoList from "../../assets/logos/list.png";
+import logo from "../../assets/logos/logo.png";
+import logoMeal from "../../assets/logos/meal.png";
 
 function Navbar() {
   return (
     <nav className={style.navbar}>
-      <img className={style.logo} src="src/assets/logos/logo.png" alt="logo" />
+      <Link to="/">
+        <img className={style.logo} src={logo} alt="logo" />
+      </Link>
       <h1 className={style.title}> HomelyFood </h1>
       <ul>
         <li>
-          <button type="button" value="list">
-            <img
-              className={style.logolist}
-              src="src/assets/logos/list.png"
-              alt="list"
-            />
-          </button>
+          <Link to="/search">
+            <figure>
+              <img className={style.logolist} src={logoList} alt="list" />
+              <figcaption>Filtres</figcaption>
+            </figure>
+          </Link>
         </li>
         <li>
-          <button type="button" value="meals">
-            <img
-              className={style.logomeal}
-              src="src/assets/logos/meal.png"
-              alt="meals"
-            />
-          </button>
+          <Link to="/recipe-list">
+            <figure>
+              <img className={style.logomeal} src={logoMeal} alt="meals" />
+              <figcaption>Recettes</figcaption>
+            </figure>
+          </Link>
         </li>
       </ul>
     </nav>

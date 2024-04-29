@@ -29,12 +29,6 @@ app.get("/featured", (req, res) => {
   res.json(filterPopular);
 });
 
-// Route des catégories
-app.get("/category", (req, res) => {
-  const allCategory = recipes.filter((r) => r.category);
-  res.json(allCategory);
-});
-
 // Route des filtres
 app.get("/filter", (req, res) => {
   const {
@@ -54,7 +48,7 @@ app.get("/filter", (req, res) => {
       : filterByCategory.filter((f) => f.ingredients.includes(ingredient));
   const booleanString = vegetarian === "true"; // on "transforme" la chaîne de caractères en booléen
   const isVegetarian =
-    vegetarian === undefined
+    vegetarian === undefined || vegetarian === "default"
       ? filterByIngredient
       : filterByIngredient.filter((f) => f.vegetarian === booleanString);
   const filterByCountry =
@@ -67,7 +61,7 @@ app.get("/filter", (req, res) => {
       ? filterByCountry
       : filterByCountry.filter((f) => !allergies.includes(f.allergies));
   const limitResults =
-    limit === ""
+    limit === "default"
       ? filterByAllergy.slice(0, 10)
       : filterByAllergy.slice(0, parseInt(limit, 10));
 
@@ -77,3 +71,15 @@ app.get("/filter", (req, res) => {
 
 // Liste de toutes les recettes
 app.get("/recipes", (req, res) => res.json(recipes));
+// Recette spécifique
+app.get("/recipes/:id", (req, res) => {
+  const recipeId = parseInt(req.params.id, 10);
+
+  const recipe = recipes.find((r) => r.id === recipeId);
+
+  if (recipe != null) {
+    res.json(recipe);
+  } else {
+    res.sendStatus(404);
+  }
+});
