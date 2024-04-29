@@ -1,3 +1,4 @@
+@import url("./variables.css");
 @font-face {
   font-family: "IndieFlower-Regular";
   src: url("./assets/fonts/IndieFlower-Regular.ttf");
@@ -8,11 +9,7 @@
 }
 
 :root {
-  --primary-color: ·#FF8C6F;
-  --secondary-color: #ffeedf;
-  --third-color: #d9d9d9;
-  --black: #333333;
-  background-color: #fff2e7;
+  background-color: var(--white);
 }
 
 * {
@@ -51,8 +48,8 @@ h2 {
   margin-bottom: 3rem;
   width: 6.3rem;
   height: 2.5rem;
-  background-color: #ff8c6f;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   border: none;
   border-bottom: 2px solid #fe5f38;
   border-radius: 15px;

@@ -7,6 +7,7 @@ export default function Filter() {
   const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(false);
   const [isAllergicToFish, setIsAllergicToFish] = useState(false);
   const [isAllergicToLactose, setIsAllergicToLactose] = useState(false);
+
   const saveAllergy = (str, bool) => {
     localStorage.setItem(str, bool);
   };
@@ -33,7 +34,11 @@ export default function Filter() {
         <p>Avez-vous des allérgies ?</p>
         <div>
           <button
-            className={style.buttonAllergies}
+            className={
+              isAllergicToArachids
+                ? `${style.buttonAllergies} ${style.buttonPressed}`
+                : style.buttonAllergies
+            }
             type="button"
             onClick={() =>
               handleClick(
@@ -47,7 +52,11 @@ export default function Filter() {
           </button>
           <button
             type="button"
-            className={style.buttonAllergies}
+            className={
+              isAllergicToSeafood
+                ? `${style.buttonAllergies} ${style.buttonPressed}`
+                : style.buttonAllergies
+            }
             onClick={() =>
               handleClick(
                 isAllergicToSeafood,
@@ -60,7 +69,11 @@ export default function Filter() {
           </button>
           <button
             type="button"
-            className={style.buttonAllergies}
+            className={
+              isAllergicToFish
+                ? `${style.buttonAllergies} ${style.buttonPressed}`
+                : style.buttonAllergies
+            }
             onClick={() =>
               handleClick(isAllergicToFish, setIsAllergicToFish, "poisson")
             }
@@ -69,7 +82,11 @@ export default function Filter() {
           </button>
           <button
             type="button"
-            className={style.buttonAllergies}
+            className={
+              isAllergicToLactose
+                ? `${style.buttonAllergies} ${style.buttonPressed}`
+                : style.buttonAllergies
+            }
             onClick={() =>
               handleClick(
                 isAllergicToLactose,
