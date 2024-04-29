@@ -51,7 +51,7 @@ p {
     background-color: var(--red);
   }
   .buttonPressed {
-    background-color: var(--blue);
+    background-color: var(--red);
     color: var(--black);
   }
 }
