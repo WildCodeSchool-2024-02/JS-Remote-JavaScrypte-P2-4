@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./filter.module.css";
 
 export default function Filter() {
+  useEffect(() => {
+    localStorage.setItem("arachides", false);
+    localStorage.setItem("fruits-de-mer", false);
+    localStorage.setItem("poisson", false);
+    localStorage.setItem("lactose", false);
+  }, []);
+
   const [isAllergicToArachids, setIsAllergicToArachids] = useState(false);
   const [isAllergicToSeafood, setIsAllergicToSeafood] = useState(false);
   const [isAllergicToFish, setIsAllergicToFish] = useState(false);
@@ -25,7 +32,7 @@ export default function Filter() {
 
   const handleClick = (bool, setBool, str) => {
     setBool(!bool);
-    saveAllergy(str, bool);
+    saveAllergy(str, !bool);
   };
 
   return (
